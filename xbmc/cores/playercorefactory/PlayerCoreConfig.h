@@ -32,6 +32,9 @@
 #include "cores/omxplayer/OMXPlayer.h"
 #endif
 #include "cores/ExternalPlayer/ExternalPlayer.h"
+#ifdef HAS_UPNP
+#include "network/upnp/UPnPPlayer.h"
+#endif
 #include "utils/log.h"
 
 class CPlayerCoreConfig
@@ -98,6 +101,9 @@ public:
 #endif
 #if defined(HAS_OMXPLAYER)
       case EPC_OMXPLAYER: pPlayer = new COMXPlayer(callback); break;
+#endif
+#if defined(HAS_UPNP)
+      case EPC_UPNPPLAYER: pPlayer = new UPNP::CUPnPPlayer(callback, m_id.c_str()); break;
 #endif
       default: return NULL;
     }

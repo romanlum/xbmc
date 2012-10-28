@@ -262,6 +262,7 @@ public:
 +---------------------------------------------------------------------*/
 CUPnP::CUPnP() :
     m_MediaBrowser(NULL),
+    m_MediaController(NULL),
     m_ServerHolder(new CDeviceHostReferenceHolder()),
     m_RendererHolder(new CRendererReferenceHolder()),
     m_CtrlPointHolder(new CCtrlPointReferenceHolder())
@@ -334,6 +335,16 @@ CUPnP::ReleaseInstance(bool bWait)
 }
 
 /*----------------------------------------------------------------------
+|   CUPnP::StartServer
++---------------------------------------------------------------------*/
+CUPnPServer* CUPnP::GetServer()
+{
+  if(upnp)
+    return (CUPnPServer*)upnp->m_ServerHolder->m_Device.AsPointer();
+  return NULL;
+}
+
+/*----------------------------------------------------------------------
 |   CUPnP::StartClient
 +---------------------------------------------------------------------*/
 void
@@ -349,6 +360,11 @@ CUPnP::StartClient()
 
     // start browser
     m_MediaBrowser = new CMediaBrowser(m_CtrlPointHolder->m_CtrlPoint);
+
+    // start controller
+    if (g_guiSettings.GetBool("services.upnpcontroller")) {
+        m_MediaController = new CMediaController(m_CtrlPointHolder->m_CtrlPoint);
+    }
 }
 
 /*----------------------------------------------------------------------
@@ -364,6 +380,8 @@ CUPnP::StopClient()
 
     delete m_MediaBrowser;
     m_MediaBrowser = NULL;
+    delete m_MediaController;
+    m_MediaController = NULL;
 }
 
 /*----------------------------------------------------------------------
