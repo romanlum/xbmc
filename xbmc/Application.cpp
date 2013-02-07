@@ -3960,7 +3960,7 @@ bool CApplication::PlayFile(const CFileItem& item, bool bRestart)
     if( m_eForcedNextPlayer != EPC_NONE )
       eNewCore = m_eForcedNextPlayer;
     else if( m_eCurrentPlayer == EPC_NONE )
-      eNewCore = CPlayerCoreFactory::GetDefaultPlayer(item);
+      eNewCore = CPlayerCoreFactory::Get().GetDefaultPlayer(item);
     else
       eNewCore = m_eCurrentPlayer;
   }
@@ -4017,7 +4017,7 @@ bool CApplication::PlayFile(const CFileItem& item, bool bRestart)
     if (m_eForcedNextPlayer != EPC_NONE)
       eNewCore = m_eForcedNextPlayer;
     else
-      eNewCore = CPlayerCoreFactory::GetDefaultPlayer(item);
+      eNewCore = CPlayerCoreFactory::Get().GetDefaultPlayer(item);
   }
 
   // this really aught to be inside !bRestart, but since PlayStack
@@ -4074,7 +4074,7 @@ bool CApplication::PlayFile(const CFileItem& item, bool bRestart)
   if (!m_pPlayer)
   {
     m_eCurrentPlayer = eNewCore;
-    m_pPlayer = CPlayerCoreFactory::CreatePlayer(eNewCore, *this);
+    m_pPlayer = CPlayerCoreFactory::Get().CreatePlayer(eNewCore, *this);
   }
 
   bool bResult;
@@ -4456,7 +4456,7 @@ void CApplication::UpdateFileState()
           m_pPlayer->GetStreamDetails(m_progressTrackingItem->GetVideoInfoTag()->m_streamDetails);
         }
         // Update bookmark for save
-        m_progressTrackingVideoResumeBookmark.player = CPlayerCoreFactory::GetPlayerName(m_eCurrentPlayer);
+        m_progressTrackingVideoResumeBookmark.player = CPlayerCoreFactory::Get().GetPlayerName(m_eCurrentPlayer);
         m_progressTrackingVideoResumeBookmark.playerState = m_pPlayer->GetPlayerState();
         m_progressTrackingVideoResumeBookmark.thumbNailImage.Empty();
 
