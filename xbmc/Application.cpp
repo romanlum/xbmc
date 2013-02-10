@@ -4188,9 +4188,6 @@ void CApplication::OnPlayBackEnded()
   if(m_bPlaybackStarting)
     return;
 
-  if (CJobManager::GetInstance().IsPaused(kJobTypeMediaFlags))
-    CJobManager::GetInstance().UnPause(kJobTypeMediaFlags);
-
   // informs python script currently running playback has ended
   // (does nothing if python is not loaded)
 #ifdef HAS_PYTHON
@@ -4215,9 +4212,6 @@ void CApplication::OnPlayBackStarted()
 {
   if(m_bPlaybackStarting)
     return;
-
-  if (!CJobManager::GetInstance().IsPaused(kJobTypeMediaFlags))
-    CJobManager::GetInstance().Pause(kJobTypeMediaFlags);
 
 #ifdef HAS_PYTHON
   // informs python script currently running playback has started
@@ -4251,9 +4245,6 @@ void CApplication::OnPlayBackStopped()
 {
   if(m_bPlaybackStarting)
     return;
-
-  if (CJobManager::GetInstance().IsPaused(kJobTypeMediaFlags))
-    CJobManager::GetInstance().UnPause(kJobTypeMediaFlags);
 
   // informs python script currently running playback has ended
   // (does nothing if python is not loaded)
@@ -5124,6 +5115,12 @@ void CApplication::ProcessSlow()
     Cocoa_HideMouse();
   }
 #endif
+
+  // Resume low priority jobs when current item is not video
+  if (!CurrentFileItem().IsVideo())
+  {
+    CJobManager::GetInstance().UnPause(CJob::PRIORITY_LOW);
+  }
 
   // Store our file state for use on close()
   UpdateFileState();
