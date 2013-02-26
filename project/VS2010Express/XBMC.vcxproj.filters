@@ -3072,6 +3072,9 @@
     <ClCompile Include="..\..\xbmc\games\libretro\LibretroEnvironment.cpp">
       <Filter>games\libretro</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\xbmc\games\SerialState.cpp">
+      <Filter>games</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\xbmc\win32\pch.h">
@@ -6005,6 +6008,9 @@
     </ClInclude>
     <ClInclude Include="..\..\xbmc\games\libretro\LibretroEnvironment.h">
       <Filter>games\libretro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\xbmc\games\SerialState.h">
+      <Filter>games</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
