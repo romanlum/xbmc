@@ -1273,6 +1273,7 @@ void CFileItem::FillInDefaultIcon()
   //   default picture for photo's
   //   default picture for songs
   //   default picture for videos
+  //   default picture for games
   //   default picture for shortcuts
   //   default picture for playlists
   //   or the icon embedded in an .xbe
@@ -1336,6 +1337,10 @@ void CFileItem::FillInDefaultIcon()
       else if ( IsPythonScript() )
       {
         SetIconImage("DefaultScript.png");
+      }
+      else if ( IsGame() )
+      {
+        SetIconImage("DefaultGame.png");
       }
       else
       {
