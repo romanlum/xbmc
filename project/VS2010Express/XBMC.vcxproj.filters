@@ -3024,7 +3024,10 @@
     <ClCompile Include="..\..\xbmc\input\windows\WINJoystickDX.cpp">
       <Filter>input\windows</Filter>
     </ClCompile>
->>>>>>> 49231da... [joystick] New joystick abstraction - make input handling separate from joystick APIs
+    <ClCompile Include="..\..\xbmc\input\windows\WINJoystickXInput.cpp">
+      <Filter>input\windows</Filter>
+    </ClCompile>
+  </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\xbmc\win32\pch.h">
       <Filter>win32</Filter>
@@ -5922,7 +5925,9 @@
     <ClInclude Include="..\..\xbmc\input\windows\WINJoystickDX.h">
       <Filter>input\windows</Filter>
     </ClInclude>
->>>>>>> 49231da... [joystick] New joystick abstraction - make input handling separate from joystick APIs
+    <ClInclude Include="..\..\xbmc\input\windows\WINJoystickXInput.h">
+      <Filter>input\windows</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\..\xbmc\win32\XBMC_PC.rc">
