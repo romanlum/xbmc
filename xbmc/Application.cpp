@@ -2845,6 +2845,43 @@ bool CApplication::OnAction(const CAction &action)
     }
   }
 
+
+  if (action.GetID() == ACTION_SWITCH_PLAYER)
+  {
+    if(IsPlaying())
+    {
+      VECPLAYERCORES cores;
+      CFileItem item(*m_itemCurrentFile.get());
+      CPlayerCoreFactory::Get().GetPlayers(item, cores);
+      PLAYERCOREID core = CPlayerCoreFactory::Get().SelectPlayerDialog(cores);
+      if(core != EPC_NONE)
+      {
+        g_application.m_eForcedNextPlayer = core;
+        item.m_lStartOffset = (int)(GetTime() * 75);
+        PlayFile(item, true);
+      }
+    }
+    else
+    {
+      VECPLAYERCORES cores;
+      CPlayerCoreFactory::Get().GetRemotePlayers(cores);
+      PLAYERCOREID core = CPlayerCoreFactory::Get().SelectPlayerDialog(cores);
+      if(core != EPC_NONE)
+      {
+        CFileItem item;
+        g_application.m_eForcedNextPlayer = core;
+        PlayFile(item, false);
+      }
+    }
+  }
+
+  if (IsPlayingGame() && ((ACTION_SAVE <= action.GetID() && action.GetID() <= ACTION_SAVE9) ||
+                          (ACTION_LOAD <= action.GetID() && action.GetID() <= ACTION_LOAD9)))
+  {
+    m_pPlayer->OnAction(action.GetID());
+    return true;
+  }
+
   if (g_peripherals.OnAction(action))
     return true;
 
