@@ -9471,11 +9471,7 @@ msgctxt "#21360"
 msgid "Share video and music libraries through UPnP"
 msgstr ""
 
-msgctxt "#21361"
-msgid "Look for remote UPnP players"
-msgstr ""
-
-#empty strings from id 21362 to 21363
+#empty strings from id 21361 to 21363
 
 msgctxt "#21364"
 msgid "Edit media share"

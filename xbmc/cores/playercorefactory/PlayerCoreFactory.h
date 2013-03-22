@@ -44,8 +44,7 @@ enum EPLAYERCORES
 #if defined(HAS_OMXPLAYER)
   EPC_OMXPLAYER,
 #endif
-  EPC_EXTPLAYER,
-  EPC_UPNPPLAYER,
+  EPC_EXTPLAYER
 };
 
 typedef unsigned int PLAYERCOREID;

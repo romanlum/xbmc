@@ -1673,7 +1673,6 @@ void CApplication::StopJSONRPCServer(bool bWait)
 void CApplication::StartUPnP()
 {
 #ifdef HAS_UPNP
-  StartUPnPClient();
   StartUPnPServer();
   StartUPnPRenderer();
 #endif
@@ -1753,28 +1752,6 @@ void CApplication::RefreshEventServer()
   if (g_guiSettings.GetBool("services.esenabled"))
   {
     CEventServer::GetInstance()->RefreshSettings();
-  }
-#endif
-}
-
-void CApplication::StartUPnPClient()
-{
-#ifdef HAS_UPNP
-  if (g_guiSettings.GetBool("services.upnpcontroller"))
-  {
-    CLog::Log(LOGNOTICE, "starting upnp client");
-    UPNP::CUPnP::GetInstance()->StartClient();
-  }
-#endif
-}
-
-void CApplication::StopUPnPClient()
-{
-#ifdef HAS_UPNP
-  if (UPNP::CUPnP::IsInstantiated())
-  {
-    CLog::Log(LOGNOTICE, "stopping upnp client");
-    UPNP::CUPnP::GetInstance()->StopClient();
   }
 #endif
 }
