@@ -2987,64 +2987,6 @@
     <ClCompile Include="..\..\xbmc\video\FFmpegVideoDecoder.cpp">
       <Filter>video</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\xbmc\view\GUIViewControl.cpp">
-      <Filter>view</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\view\GUIViewState.cpp">
-      <Filter>view</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\view\ViewDatabase.cpp">
-      <Filter>view</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\guilib\imagefactory.cpp">
-      <Filter>guilib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\guilib\cximage.cpp">
-      <Filter>guilib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\filesystem\DAVFile.cpp">
-      <Filter>filesystem</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\filesystem\DAVCommon.cpp">
-      <Filter>filesystem</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\peripherals\bus\virtual\PeripheralBusCEC.cpp">
-      <Filter>peripherals\bus</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\network\upnp\UPnPSettings.cpp">
-      <Filter>network\upnp</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\AppParamParser.cpp" />
-    <ClCompile Include="..\..\xbmc\settings\dialogs\GUIDialogContentSettings.cpp">
-      <Filter>settings\dialogs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\settings\dialogs\GUIDialogLockSettings.cpp">
-      <Filter>settings\dialogs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\settings\dialogs\GUIDialogProfileSettings.cpp">
-      <Filter>settings\dialogs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\settings\dialogs\GUIDialogSettings.cpp">
-      <Filter>settings\dialogs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\settings\windows\GUISettingControls.cpp">
-      <Filter>settings\windows</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\settings\windows\GUIWindowSettings.cpp">
-      <Filter>settings\windows</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\settings\windows\GUIWindowSettingsCategory.cpp">
-      <Filter>settings\windows</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\settings\windows\GUIWindowSettingsProfile.cpp">
-      <Filter>settings\windows</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\settings\windows\GUIWindowSettingsScreenCalibration.cpp">
-      <Filter>settings\windows</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\settings\windows\GUIWindowTestPattern.cpp">
-      <Filter>settings\windows</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\xbmc\utils\RssManager.cpp">
       <Filter>utils</Filter>
     </ClCompile>
@@ -5960,31 +5902,12 @@
     <ClInclude Include="..\..\xbmc\video\FFmpegVideoDecoder.h">
       <Filter>video</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\xbmc\view\GUIViewControl.h">
-      <Filter>view</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\xbmc\view\GUIViewState.h">
-      <Filter>view</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\xbmc\view\ViewDatabase.h">
-      <Filter>view</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\xbmc\view\ViewState.h">
-      <Filter>view</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\xbmc\filesystem\DAVFile.h">
-      <Filter>filesystem</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\xbmc\filesystem\DAVCommon.h">
-      <Filter>filesystem</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\xbmc\peripherals\bus\virtual\PeripheralBusCEC.h">
       <Filter>peripherals\bus</Filter>
     </ClInclude>
     <ClInclude Include="..\..\xbmc\network\upnp\UPnPSettings.h">
       <Filter>network\upnp</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\xbmc\AppParamParser.h" />
     <ClInclude Include="..\..\xbmc\settings\dialogs\GUIDialogContentSettings.h">
       <Filter>settings\dialogs</Filter>
     </ClInclude>
@@ -6108,6 +6031,7 @@
     <ClInclude Include="..\..\xbmc\games\savegames\GUIDialogGameSaves.h">
       <Filter>games\savegames</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\xbmc\input\windows\WINJoystick.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\..\xbmc\win32\XBMC_PC.rc">
