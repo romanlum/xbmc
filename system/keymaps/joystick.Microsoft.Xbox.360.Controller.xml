@@ -82,11 +82,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <!-- A selects. B goes back. X gets context menu. Y goes fullscreen and back. -->
       <button id="1">Select</button>
       <button id="2">Back</button>
@@ -165,7 +167,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -175,11 +181,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="8">XBMC.Skin.ToggleSetting(HomeViewToggle)</button>
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
@@ -198,7 +206,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -208,11 +220,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="6">Highlight</button>
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
@@ -231,7 +245,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -241,11 +259,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="5">Delete</button>
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
@@ -268,7 +288,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -278,11 +302,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <!--
             A pauses and starts the video.
             B stops the video.
@@ -430,7 +456,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -440,11 +470,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="11">ChannelUp</button>
       <button id="12">ChannelDown</button>
       <button id="13">PreviousChannelGroup</button>
@@ -477,7 +509,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -487,11 +523,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="2">Close</button>
       <button id="3">OSD</button>
       <button id="8">Close</button>
@@ -518,7 +556,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -528,11 +570,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="3">Close</button>
       <button id="9">Close</button>
       <button id="10">Close</button>
@@ -555,7 +599,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -565,11 +613,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="1">Pause</button>
       <button id="2">Stop</button>
       <button id="3">XBMC.ActivateWindow(MusicOSD)</button>
@@ -618,7 +668,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -628,11 +682,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="3">Close</button>
       <button id="6">Info</button>
     </joystick>
@@ -653,7 +709,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -663,11 +723,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="2">Close</button>
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
@@ -686,7 +748,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -696,11 +762,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="2">Close</button>
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
@@ -719,7 +787,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -729,11 +801,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="1">Pause</button>
       <button id="2">Stop</button>
       <button id="4">ZoomNormal</button>
@@ -784,7 +858,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -794,11 +872,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="3">ResetCalibration</button>
       <button id="5">NextResolution</button>
       <button id="6">NextCalibration</button>
@@ -821,7 +901,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -831,11 +915,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="3">ResetCalibration</button>
       <button id="5">NextResolution</button>
       <button id="6">NextCalibration</button>
@@ -858,7 +944,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -868,11 +958,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="3">Close</button>
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
@@ -891,7 +983,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -901,11 +997,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="2">Stop</button>
       <button id="3">OSD</button>
       <button id="5">AspectRatio</button>
@@ -930,7 +1028,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -940,11 +1042,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="5">AspectRatio</button>
       <button id="3">Close</button>
     </joystick>
@@ -965,7 +1069,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -975,11 +1083,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="5">AspectRatio</button>
       <button id="3">Close</button>
     </joystick>
@@ -1000,7 +1110,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -1010,11 +1124,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="5">Delete</button>
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
@@ -1037,7 +1153,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -1047,11 +1167,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="5">Delete</button>
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
@@ -1070,7 +1192,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -1080,11 +1206,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="2">BackSpace</button>
       <button id="4">Symbols</button>
       <button id="5">Shift</button>
@@ -1113,7 +1241,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -1123,11 +1255,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="2">Close</button>
       <button id="3">Close</button>
     </joystick>
@@ -1148,7 +1282,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -1158,11 +1296,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="3">Info</button>
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
@@ -1181,7 +1321,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -1191,11 +1335,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="2">PreviousMenu</button>
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
@@ -1214,7 +1360,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -1224,11 +1374,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="2">Close</button>
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
@@ -1247,7 +1399,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -1257,11 +1413,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="2">Close</button>
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
@@ -1280,7 +1438,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -1290,11 +1452,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="2">Close</button>
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
@@ -1313,7 +1477,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -1323,11 +1491,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="2">PreviousMenu</button>
       <button id="9">PreviousMenu</button>
     </joystick>
@@ -1348,7 +1518,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -1358,11 +1532,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="2">PreviousMenu</button>
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
@@ -1381,7 +1557,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -1391,11 +1571,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="2">Close</button>
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
@@ -1414,7 +1596,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -1424,11 +1610,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="2">Close</button>
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
@@ -1447,7 +1635,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -1457,11 +1649,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="2">BackSpace</button>
       <button id="9">Enter</button>
     </joystick>
@@ -1482,7 +1676,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -1492,11 +1690,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="9">Stop</button>
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
@@ -1515,7 +1715,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -1525,11 +1729,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="2">PreviousMenu</button>
       <button id="9">Close</button>
     </joystick>
@@ -1550,7 +1756,11 @@
     <joystick name="Controller (XBOX 360 For Windows)">
 
 
+
       <altname>XBMC-Compatible XInput Controller</altname>
+      <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
+
+
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
 
       <altname>Controller (Gamepad F310)</altname>
@@ -1560,11 +1770,13 @@
       <altname>Controller (Xbox 360 Wireless Receiver for Windows)</altname>
       <altname>Controller (Xbox wireless receiver for windows)</altname>
       <altname>Controller (XBOX360 GAMEPAD)</altname>
+      <altname>Wireless Gamepad F710 (Controller)</altname>
       <altname>XBOX 360 For Windows</altname>
       <altname>XBOX 360 For Windows (Controller)</altname>
       <altname>Xbox 360 Wireless Controller</altname>
       <altname>Xbox Receiver for Windows (Wireless Controller)</altname>
       <altname>Xbox wireless receiver for windows (Controller)</altname>
+      <altname>Gamepad F310 (Controller)</altname>
       <button id="2">PreviousMenu</button>
       <button id="9">Close</button>
     </joystick>

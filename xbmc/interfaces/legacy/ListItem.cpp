@@ -443,7 +443,6 @@ namespace XBMCAddon
       }
       else if (strcmpi(type,"pictures") == 0)
       {
-        bool pictureTagLoaded = false;
         for (Dictionary::const_iterator it = infoLabels.begin(); it != infoLabels.end(); it++)
         {
           CStdString key = it->first;
@@ -469,11 +468,8 @@ namespace XBMCAddon
             if (!exifkey.Left(5).Equals("exif:") || exifkey.length() < 6) continue;
             int info = CPictureInfoTag::TranslateString(exifkey.Mid(5));
             item->GetPictureInfoTag()->SetInfo(info, value);
-            pictureTagLoaded = true;
           }
         }
-        if (pictureTagLoaded)
-          item->GetPictureInfoTag()->SetLoaded(true);
       }
       else if (strcmpi(type, "game") == 0)
       {

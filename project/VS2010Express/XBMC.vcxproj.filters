@@ -2987,9 +2987,6 @@
     <ClCompile Include="..\..\xbmc\video\FFmpegVideoDecoder.cpp">
       <Filter>video</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\xbmc\utils\RssManager.cpp">
-      <Filter>utils</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\xbmc\input\Joystick.cpp">
       <Filter>input</Filter>
     </ClCompile>
@@ -3073,6 +3070,8 @@
     </ClCompile>
     <ClCompile Include="..\..\xbmc\games\savegames\GUIDialogGameSaves.cpp">
       <Filter>games\savegames</Filter>
+    <ClCompile Include="..\..\xbmc\peripherals\bus\virtual\PeripheralBusCEC.cpp">
+      <Filter>peripherals\bus</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -5941,9 +5940,6 @@
     <ClInclude Include="..\..\xbmc\utils\IRssObserver.h">
       <Filter>utils</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\xbmc\utils\RssManager.h">
-      <Filter>utils</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\xbmc\input\IJoystick.h">
       <Filter>input</Filter>
     </ClInclude>
@@ -6032,6 +6028,9 @@
       <Filter>games\savegames</Filter>
     </ClInclude>
     <ClInclude Include="..\..\xbmc\input\windows\WINJoystick.h" />
+    <ClInclude Include="..\..\xbmc\peripherals\bus\virtual\PeripheralBusCEC.h">
+      <Filter>peripherals\bus</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\..\xbmc\win32\XBMC_PC.rc">
