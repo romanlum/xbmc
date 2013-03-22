@@ -26,7 +26,7 @@
 #include "guilib/WindowIDs.h"
 #include "settings/Settings.h"
 #include "utils/StringUtils.h"
-#include "view/ViewState.h"
+#include "ViewState.h"
 
 CGUIViewStateWindowGames::CGUIViewStateWindowGames(const CFileItemList& items) : CGUIViewState(items)
 {

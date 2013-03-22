@@ -293,12 +293,6 @@
 #define ACTION_INCREASE_PAR           219
 #define ACTION_DECREASE_PAR           220
 
-#define ACTION_GESTURE_NOTIFY         221
-#define ACTION_GESTURE_BEGIN          222
-#define ACTION_GESTURE_ZOOM           223 //sendaction with point and currentPinchScale (fingers together < 1.0 -> fingers apart > 1.0)
-#define ACTION_GESTURE_ROTATE         224
-#define ACTION_GESTURE_PAN            225
-#define ACTION_GESTURE_END            226
 #define ACTION_VSHIFT_UP              227 // shift up video image in DVDPlayer
 #define ACTION_VSHIFT_DOWN            228 // shift down video image in DVDPlayer
 
@@ -352,6 +346,8 @@
 
 #define WINDOW_ADDON_BROWSER              10040
 
+#define WINDOW_GAMES                      10050
+
 #define WINDOW_SCREENSAVER_DIM               97
 #define WINDOW_DEBUG_INFO                    98
 #define WINDOW_DIALOG_POINTER             10099
@@ -399,6 +395,7 @@
 #define WINDOW_DIALOG_PERIPHERAL_SETTINGS 10150
 #define WINDOW_DIALOG_EXT_PROGRESS        10151
 #define WINDOW_DIALOG_MEDIA_FILTER        10152
+#define WINDOW_DIALOG_GAME_SAVES          10153
 
 #define WINDOW_MUSIC_PLAYLIST             10500
 #define WINDOW_MUSIC_FILES                10501
@@ -457,7 +454,6 @@
 #define WINDOW_ADDON_START                14000
 #define WINDOW_ADDON_END                  14099
 
-#define ACTION_SWITCH_PLAYER          234
 
 // The Joypad is essentially a Super Nintendo controller, but with additional
 // L2/R2/L3/R3 buttons, similar to a PS1 DualShock
@@ -552,7 +548,7 @@
 // useful in user keyboard.xml etc to disable actions specified in the
 // system mappings.
 #define ACTION_NOOP                   999
->>>>>>> 81c8774... Added keyboard and joystick input handling to RetroPlayer built on the new joystick abstraction layer
+
 
 #define ICON_TYPE_NONE          101
 #define ICON_TYPE_PROGRAMS      102

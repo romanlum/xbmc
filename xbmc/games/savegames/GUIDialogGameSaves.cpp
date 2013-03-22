@@ -32,7 +32,7 @@
 #include "settings/AdvancedSettings.h"
 #include "utils/log.h"
 #include "utils/URIUtils.h"
-#include "view/ViewState.h"
+#include "ViewState.h"
 
 #define CONTROL_ADD_SAVESTATE          2
 #define CONTROL_CLEAR_SAVESTATES       3

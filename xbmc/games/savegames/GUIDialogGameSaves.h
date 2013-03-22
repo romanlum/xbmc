@@ -22,7 +22,7 @@
 #include "FileItem.h"
 #include "guilib/GUIDialog.h"
 #include "utils/StdString.h"
-#include "view/GUIViewControl.h"
+#include "GUIViewControl.h"
 
 class CGUIDialogGameSaves : public CGUIDialog
 {

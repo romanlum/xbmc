@@ -20,7 +20,7 @@
  *
  */
 
-#include "view/GUIViewState.h"
+#include "GUIViewState.h"
 
 class CGUIViewStateWindowGames : public CGUIViewState
 {

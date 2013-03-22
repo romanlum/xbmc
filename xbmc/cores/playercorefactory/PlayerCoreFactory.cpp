@@ -128,9 +128,10 @@ void CPlayerCoreFactory::GetPlayers( VECPLAYERCORES &vecCores ) const
       continue;
     if (m_vecCoreConfigs[i]->m_bPlaysAudio || m_vecCoreConfigs[i]->m_bPlaysVideo)
       vecCores.push_back(i+1);
+  }
 }
 
-void CPlayerCoreFactory::GetPlayers( VECPLAYERCORES &vecCores, const bool audio, const bool video ) const
+void CPlayerCoreFactory::GetPlayers( VECPLAYERCORES &vecCores, bool audio, bool video ) const
 {
   CSingleLock lock(m_section);
   CLog::Log(LOGDEBUG, "CPlayerCoreFactory::GetPlayers: for video=%d, audio=%d", video, audio);
@@ -239,16 +240,6 @@ void CPlayerCoreFactory::GetPlayers( const CFileItem& item, VECPLAYERCORES &vecC
   CLog::Log(LOGDEBUG, "CPlayerCoreFactory::GetPlayers: added %"PRIuS" players", vecCores.size());
 }
 
-void CPlayerCoreFactory::GetRemotePlayers( VECPLAYERCORES &vecCores ) const
-{
-  CSingleLock lock(m_section);
-  for(unsigned int i = 0; i < m_vecCoreConfigs.size(); i++)
-  {
-    if(m_vecCoreConfigs[i]->m_eCore != EPC_UPNPPLAYER)
-      continue;
-    vecCores.push_back(i+1);
-  }
-}
 
 PLAYERCOREID CPlayerCoreFactory::GetDefaultPlayer( const CFileItem& item ) const
 {
@@ -401,36 +392,11 @@ bool CPlayerCoreFactory::LoadConfiguration(TiXmlElement* pConfig, bool clear)
 
 void CPlayerCoreFactory::OnPlayerDiscovered(const CStdString& id, const CStdString& name, EPLAYERCORES core)
 {
-  CSingleLock lock(m_section);
-  std::vector<CPlayerCoreConfig *>::iterator it;
-  for(it  = m_vecCoreConfigs.begin();
-      it != m_vecCoreConfigs.end();
-      it++)
-  {
-    if ((*it)->GetId() == id)
-    {
-      (*it)->m_name  = name;
-      (*it)->m_eCore = core;
-      return;
-    }
-  }
-
-  CPlayerCoreConfig* player = new CPlayerCoreConfig(name, core, NULL, id);
-  player->m_bPlaysAudio = true;
-  player->m_bPlaysVideo = true;
-  m_vecCoreConfigs.push_back(player);
+ 
 }
 
 void CPlayerCoreFactory::OnPlayerRemoved(const CStdString& id)
 {
-  CSingleLock lock(m_section);
-  std::vector<CPlayerCoreConfig *>::iterator it;
-  for(it  = m_vecCoreConfigs.begin();
-      it != m_vecCoreConfigs.end();
-      it++)
-  {
-    if ((*it)->GetId() == id)
-      (*it)->m_eCore = EPC_NONE;
-  }
+ 
 }
->>>>>>> 566458d... turn CPlayerCoreFactory into a singleton
+

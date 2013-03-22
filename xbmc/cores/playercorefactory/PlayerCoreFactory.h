@@ -76,7 +76,7 @@ public:
   void GetPlayers( VECPLAYERCORES &vecCores, bool audio, bool video ) const; //All audio players and/or video players
   void GetPlayers( VECPLAYERCORES &vecCores ) const;                         //All players
 
-  void GetRemotePlayers( VECPLAYERCORES &vecCores ) const;                   //All remote players we can attach to
+  
 
   PLAYERCOREID GetDefaultPlayer( const CFileItem& item ) const;
 

@@ -120,7 +120,7 @@ namespace ADDON
     const CStdString &GetFilePath() const { return m_gamePath; }
 
     // Returns true after Init() is called and until DeInit() is called.
-    bool IsInitialized() const { return m_dll.IsLoaded(); }
+    bool IsInitialized() { return m_dll.IsLoaded(); }
 
     const GameClientConfig &GetConfig() const { return m_config; }
 
