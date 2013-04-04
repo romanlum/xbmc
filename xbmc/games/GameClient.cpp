@@ -426,11 +426,10 @@ void CGameClient::SetDevice(unsigned int port, unsigned int device)
 
 void CGameClient::RunFrame()
 {
+  CSingleLock lock(m_critSection);
+
   if (m_bIsPlaying)
   {
-    // RunFrame() and RewindFrames() can be run in different threads, must lock
-    CSingleLock lock(m_critSection);
-
     m_dll.retro_run();
 
     m_saveState.SetPlaytimeFrames(m_saveState.GetPlaytimeFrames() + 1);
@@ -632,11 +631,11 @@ bool CGameClient::Save()
 
 unsigned int CGameClient::RewindFrames(unsigned int frames)
 {
+  CSingleLock lock(m_critSection);
+
   unsigned int rewound = 0;
   if (m_bIsPlaying && m_rewindSupported)
   {
-    CSingleLock lock(m_critSection);
-
     rewound = m_serialState.RewindFrames(frames);
     if (rewound && m_dll.retro_unserialize(m_serialState.GetState(), m_serialState.GetFrameSize()))
     {
