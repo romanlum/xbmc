@@ -216,8 +216,9 @@ void CLinuxJoystick::Initialize(JoystickArray &joysticks)
       joysticks.push_back(boost::shared_ptr<IJoystick>(new CLinuxJoystick(fd, joysticks.size(),
           name, filename, buttons, axes)));
 
-	  delete dirent;
+	  
     }
+	delete dirent;
   }
   delete namelist;
 }
