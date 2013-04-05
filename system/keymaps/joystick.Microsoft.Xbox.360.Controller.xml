@@ -155,8 +155,8 @@
       <axis id="4" limit="+1">VolumeUp</axis>
       <axis id="5" limit="-1">VolumeUp</axis>
       <axis id="5" limit="+1">VolumeDown</axis>
-      <axis id="6" limit="-1">ScrollUp</axis>
-      <axis id="6" limit="+1">ScrollDown</axis>
+      <!-- <axis id="6" limit="-1">ScrollUp</axis> -->
+      <!-- <axis id="6" limit="+1">ScrollDown</axis> -->
       <hat id="1" position="up">Up</hat>
       <hat id="1" position="down">Down</hat>
       <hat id="1" position="left">Left</hat>
@@ -286,15 +286,9 @@
   </MyMusicLibrary>
   <FullscreenVideo>
     <joystick name="Controller (XBOX 360 For Windows)">
-
-
-
       <altname>XBMC-Compatible XInput Controller</altname>
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
-
-
       <altname>Afterglow Gamepad for Xbox 360 (Controller)</altname>
-
       <altname>Controller (Gamepad F310)</altname>
       <altname>Controller (Gamepad for Xbox 360)</altname>
       <altname>Controller (Rumble Gamepad F510)</altname>
@@ -364,8 +358,8 @@
       <button id="13">StepForward</button>
       <button id="14">BigStepForward</button>
       <button id="15">BigStepBack</button>
-      <axis id="6" limit="-1">AnalogRewind</axis>
-      <axis id="6" limit="+1">AnalogFastForward</axis>
+      <!-- <axis id="6" limit="-1">AnalogRewind</axis> -->
+      <!-- <axis id="6" limit="+1">AnalogFastForward</axis> -->
       <hat id="1" position="up">BigStepForward</hat>
       <hat id="1" position="down">BigStepBack</hat>
       <hat id="1" position="left">StepBack</hat>
@@ -414,8 +408,8 @@
       <axis id="1" limit="+1">JoypadRight</axis>
       <axis id="2" limit="-1">JoypadUp</axis>
       <axis id="2" limit="+1">JoypadDown</axis>
-      <axis id="3" limit="+1">AnalogRewind</axis>
-      <axis id="3" limit="-1">AnalogFastForward</axis>
+      <!--<axis id="3" limit="+1">AnalogRewind</axis>-->
+      <!--<axis id="3" limit="-1">AnalogFastForward</axis>-->
     </joystick>
     <joystick name="Microsoft X-Box 360 pad">
       <altname>BigBen Interactive XBOX 360 Controller</altname>
@@ -448,8 +442,8 @@
       <axis id="1" limit="+1">JoypadRight</axis>
       <axis id="2" limit="-1">JoypadUp</axis>
       <axis id="2" limit="+1">JoypadDown</axis>
-      <axis id="3" limit="+1">AnalogRewind</axis>
-      <axis id="3" limit="-1">AnalogFastForward</axis>
+      <!--<axis id="3" limit="+1">AnalogRewind</axis>-->
+      <!--<axis id="3" limit="-1">AnalogFastForward</axis>-->
     </joystick>
   </FullscreenGame>
   <FullscreenLiveTV>
@@ -548,8 +542,8 @@
       <button id="2">Close</button>
       <button id="3">OSD</button>
       <button id="8">Close</button>
-      <axis id="6" limit="+1">AnalogRewind</axis>
-      <axis id="6" limit="-1">AnalogFastForward</axis>
+      <!-- <axis id="6" limit="+1">AnalogRewind</axis> -->
+      <!-- <axis id="6" limit="-1">AnalogFastForward</axis> -->
     </joystick>
   </FullscreenInfo>
   <PlayerControls>
@@ -656,8 +650,8 @@
       <button id="13">NextPreset</button>
       <button id="14">SkipPrevious</button>
       <button id="15">SkipNext</button>
-      <axis id="6" limit="-1">AnalogRewind</axis>
-      <axis id="6" limit="+1">AnalogFastForward</axis>
+      <!-- <axis id="6" limit="-1">AnalogRewind</axis> -->
+      <!-- <axis id="6" limit="+1">AnalogFastForward</axis> -->
       <hat id="1" position="up">SkipNext</hat>
       <hat id="1" position="down">SkipPrevious</hat>
       <hat id="1" position="left">PreviousPreset</hat>
@@ -846,8 +840,8 @@
       <button id="15">ZoomOut</button>
       <axis id="1">AnalogMove</axis>
       <axis id="2">AnalogMove</axis>
-      <axis id="6" limit="+1">ZoomOut</axis>
-      <axis id="6" limit="-1">ZoomIn</axis>
+      <!-- <axis id="6" limit="+1">ZoomOut</axis> -->
+      <!-- <axis id="6" limit="-1">ZoomIn</axis> -->
       <hat id="1" position="up">ZoomIn</hat>
       <hat id="1" position="down">ZoomOut</hat>
       <hat id="1" position="left">PreviousPicture</hat>
@@ -1233,8 +1227,8 @@
       <button id="4">Symbols</button>
       <button id="5">Shift</button>
       <button id="10">Enter</button>
-      <axis id="6" limit="+1">CursorLeft</axis>
-      <axis id="6" limit="-1">CursorRight</axis>
+      <!-- <axis id="6" limit="+1">CursorLeft</axis> -->
+      <!-- <axis id="6" limit="-1">CursorRight</axis> -->
     </joystick>
   </VirtualKeyboard>
   <ContextMenu>
