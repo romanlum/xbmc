@@ -124,6 +124,7 @@ void CLinuxJoystick::Initialize(JoystickArray &joysticks)
       if (fd < 0)
       {
         CLog::Log(LOGERROR, "CLinuxJoystick::Initialize: can't open %s (errno=%d)", filename.c_str(), errno);
+		delete dirent;
         continue;
       }
 
@@ -139,6 +140,7 @@ void CLinuxJoystick::Initialize(JoystickArray &joysticks)
       {
         CLog::Log(LOGERROR, "CLinuxJoystick::Initialize: failed ioctl() (errno=%d)", errno);
         close(fd);
+		delete dirent;
         continue;
       }
 
@@ -146,6 +148,7 @@ void CLinuxJoystick::Initialize(JoystickArray &joysticks)
       {
         CLog::Log(LOGERROR, "CLinuxJoystick::Initialize: failed fcntl() (errno=%d)", errno);
         close(fd);
+		delete dirent;
         continue;
       }
 
@@ -154,6 +157,7 @@ void CLinuxJoystick::Initialize(JoystickArray &joysticks)
       {
         CLog::Log(LOGERROR, "CLinuxJoystick::Initialize: old (0.x) interface is not supported (version=%08x)", version);
         close(fd);
+		delete dirent;
         continue;
       }
 
@@ -211,9 +215,11 @@ void CLinuxJoystick::Initialize(JoystickArray &joysticks)
       // Got enough information, time to move on to the next joystick
       joysticks.push_back(boost::shared_ptr<IJoystick>(new CLinuxJoystick(fd, joysticks.size(),
           name, filename, buttons, axes)));
+
+	  delete dirent;
     }
   }
-  closedir(pd);
+  delete namelist;
 }
 
 /**
