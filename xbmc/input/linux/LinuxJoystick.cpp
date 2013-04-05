@@ -98,18 +98,22 @@ CLinuxJoystick::~CLinuxJoystick()
 /* static */
 void CLinuxJoystick::Initialize(JoystickArray &joysticks)
 {
+  struct dirent **namelist;
+  int i,n;
   // TODO: under what circumstances should we read /dev/js0?
+  
   string inputDir("/dev/input");
-  DIR *pd = opendir(inputDir.c_str());
-  if (pd == NULL)
+  n = scandir(inputDir.c_str(), &namelist, 0, alphasort);
+  if (n < 0)
   {
-    CLog::Log(LOGERROR, "CLinuxJoystick::Initialize: can't open /dev/input (errno=%d)", errno);
+	CLog::Log(LOGERROR, "CLinuxJoystick::Initialize: can't open /dev/input (errno=%d)", n);
     return;
   }
-
-  dirent *pDirent;
-  while ((pDirent = readdir(pd))!= NULL)
+  
+  
+  for(i = 0; i < n; i++)
   {
+	struct dirent* pDirent=namelist[i];
     if (strncmp(pDirent->d_name, "js", 2) == 0)
     {
       // Found a joystick device
@@ -120,6 +124,7 @@ void CLinuxJoystick::Initialize(JoystickArray &joysticks)
       if (fd < 0)
       {
         CLog::Log(LOGERROR, "CLinuxJoystick::Initialize: can't open %s (errno=%d)", filename.c_str(), errno);
+		delete pDirent;
         continue;
       }
 
@@ -135,6 +140,7 @@ void CLinuxJoystick::Initialize(JoystickArray &joysticks)
       {
         CLog::Log(LOGERROR, "CLinuxJoystick::Initialize: failed ioctl() (errno=%d)", errno);
         close(fd);
+		delete pDirent;
         continue;
       }
 
@@ -142,6 +148,7 @@ void CLinuxJoystick::Initialize(JoystickArray &joysticks)
       {
         CLog::Log(LOGERROR, "CLinuxJoystick::Initialize: failed fcntl() (errno=%d)", errno);
         close(fd);
+		delete pDirent;
         continue;
       }
 
@@ -150,6 +157,7 @@ void CLinuxJoystick::Initialize(JoystickArray &joysticks)
       {
         CLog::Log(LOGERROR, "CLinuxJoystick::Initialize: old (0.x) interface is not supported (version=%08x)", version);
         close(fd);
+		delete pDirent;
         continue;
       }
 
@@ -207,9 +215,12 @@ void CLinuxJoystick::Initialize(JoystickArray &joysticks)
       // Got enough information, time to move on to the next joystick
       joysticks.push_back(boost::shared_ptr<IJoystick>(new CLinuxJoystick(fd, joysticks.size(),
           name, filename, buttons, axes)));
+
+	  
     }
+	delete pDirent;
   }
-  closedir(pd);
+  delete namelist;
 }
 
 /**

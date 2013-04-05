@@ -96,6 +96,17 @@ namespace ADDON
     virtual ~CGameClient() { DeInit(); }
 
     /**
+     * Settings and strings are handled slightly differently with game client
+     * add-ons because they are non-unique, in that all game clients share the
+     * same class of settings and strings. Default settings are hard-coded,
+     * trivial saves are skipped to avoid unnecessary file creations, and
+     * strings simply use g_localizeStrings.
+     * \sa LoadSettings
+     */
+    virtual void SaveSettings();
+    virtual CStdString GetString(uint32_t id);
+
+    /**
      * Load the DLL and query basic parameters. After Init() is called, the
      * Get*() and CanOpen() functions may be called.
      */
@@ -207,10 +218,10 @@ namespace ADDON
     unsigned int RewindFrames(unsigned int frames);
 
     // Returns how many frames it is possible to rewind with a call to RewindFrames().
-    size_t GetAvailableFrames() const { return m_rewindSupported ? m_serialState.GetFramesAvailable() : 0; }
+    size_t GetAvailableFrames() const { return m_bRewindEnabled ? m_serialState.GetFramesAvailable() : 0; }
 
     // Returns the maximum amount of frames that can ever be rewound.
-    size_t GetMaxFrames() const { return m_rewindSupported ? m_serialState.GetMaxFrames() : 0; }
+    size_t GetMaxFrames() const { return m_bRewindEnabled ? m_serialState.GetMaxFrames() : 0; }
 
     // Reset the game, if running.
     void Reset();
@@ -226,12 +237,15 @@ namespace ADDON
      */
     bool IsExtensionValid(const CStdString &ext) const;
 
+  protected:
+    virtual bool LoadSettings(bool bForce = false);
+
   private:
     void Initialize();
 
     /**
      * Init the savestate file by setting the game path, game client and game
-     * CRC.
+     * CRC. Most field, such as playtime, are preserved.
      *
      * gameBuffer and length are convenience variables to avoid hitting the
      * disk for CRC calculation when the game file is already loaded in RAM.
@@ -274,7 +288,8 @@ namespace ADDON
     int              m_region; // Region of the loaded game
 
     CCriticalSection m_critSection;
-    bool             m_rewindSupported;
+    unsigned int     m_serialSize;
+    bool             m_bRewindEnabled;
     CSerialState     m_serialState;
     CSavestate       m_saveState;
 

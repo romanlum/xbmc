@@ -95,7 +95,59 @@ void CGameClient::Initialize()
   m_frameRate = 0.0;
   m_sampleRate = 0.0;
   m_region = -1; // invalid
-  m_rewindSupported = false;
+  m_serialSize = 0;
+  m_bRewindEnabled = false;
+}
+
+bool CGameClient::LoadSettings(bool bForce /* = false */)
+{
+  if (m_settingsLoaded && !bForce)
+    return true;
+
+  TiXmlElement category("category");
+  category.SetAttribute("label", "15033"); // Emulator setup
+  m_addonXmlDoc.InsertEndChild(category);
+
+  TiXmlElement systemdir("setting");
+  systemdir.SetAttribute("id", "systemdirectory");
+  systemdir.SetAttribute("label", "15034"); // External system directory
+  systemdir.SetAttribute("type", "folder");
+  systemdir.SetAttribute("default", "");
+  m_addonXmlDoc.RootElement()->InsertEndChild(systemdir);
+
+  // Whether system directory setting is visible in Game Settings (GUIWindowSettingsCategory)
+  // Setting is made visible the first time the game client asks for it
+  TiXmlElement gamesettings("setting");
+  gamesettings.SetAttribute("id", "showingamesettings");
+  gamesettings.SetAttribute("type", "bool");
+  gamesettings.SetAttribute("visible", "false"); // don't show the setting in GUIDialogAddonSettings
+  gamesettings.SetAttribute("default", "false");
+  m_addonXmlDoc.RootElement()->InsertEndChild(gamesettings);
+
+  SettingsFromXML(m_addonXmlDoc, true);
+  LoadUserSettings();
+  m_settingsLoaded = true;
+  return true;
+}
+
+void CGameClient::SaveSettings()
+{
+  // Avoid creating unnecessary files. This will skip creating the user save
+  // xml unless a value has deviated from a default, or a previous user save
+  // xml was loaded. Once a user save xml is created all saves will then
+  // succeed.
+  //
+  // The desired result here is that the user save xml only exists after
+  // RETRO_ENVIRONMENT_GET_SYSTEM_DIRECTORY is first called in
+  // CLibretroEnvironment (or is modified by the user).
+  if (HasUserSettings() || GetSetting("showingamesettings") == "true" || GetSetting("systemdirectory") != "")
+    CAddon::SaveSettings();
+}
+
+CStdString CGameClient::GetString(uint32_t id)
+{
+  // No special string handling for game clients
+  return g_localizeStrings.Get(id);
 }
 
 bool CGameClient::Init()
@@ -207,8 +259,9 @@ bool CGameClient::OpenFile(const CFileItem& file, const DataReceiver &callbacks)
   callbacks.SetPixelFormat(RETRO_PIXEL_FORMAT_0RGB1555);
   callbacks.SetKeyboardCallback(NULL);
 
-  // Install the hooks. These are called by CLibretroEnvironment::EnvironmentCallback().
-  CLibretroEnvironment::SetCallbacks(callbacks.SetPixelFormat, callbacks.SetKeyboardCallback);
+  // Install the hooks. These are called by CLibretroEnvironment::EnvironmentCallback()
+  CLibretroEnvironment::SetCallbacks(callbacks.SetPixelFormat, callbacks.SetKeyboardCallback,
+    GameClientPtr(new CGameClient(Props())));
 
   // Because we call m_dll.retro_init() here instead of in Init(), keep track
   // of this. Note that if we return false later, m_bIsInited will still be
@@ -245,21 +298,30 @@ bool CGameClient::OpenFile(const CFileItem& file, const DataReceiver &callbacks)
       else
         m_gamePath = info.path;
 
-      // If info.data is set, then info.path must be set back to NULL
+      // If info.data is set, then info.path must be set back to NULL so that
+      // the game client is forced to load from memory
       if (info.data)
         info.path = NULL;
 
-      if (m_dll.retro_load_game(&info))
+      if (m_dll.retro_load_game(&info) && !CLibretroEnvironment::Abort())
       {
         CLog::Log(LOGINFO, "GameClient: Client successfully loaded game");
         success = true;
       }
       else
-        CLog::Log(LOGINFO, "GameClient: Client failed to load game");
+      {
+        delete[] reinterpret_cast<const uint8_t*>(info.data);
+        info.data = NULL;
 
-      // Hopefully the game client assumed its own copy of the game data
-      //delete[] info.data; // TODO
-      info.data = NULL;
+        // If the user bailed and went to the game settings screen, the abort bit was set
+        if (CLibretroEnvironment::Abort())
+        {
+          CLog::Log(LOGDEBUG, "GameClient: successfully loaded game, but CLibretroEnvironment aborted");
+          return false;
+        }
+        else
+          CLog::Log(LOGINFO, "GameClient: Client failed to load game");
+      }
     }
   }
 
@@ -311,52 +373,51 @@ bool CGameClient::OpenFile(const CFileItem& file, const DataReceiver &callbacks)
 
   m_frameRate = fps;
   m_sampleRate = sampleRate;
-  m_rewindSupported = g_guiSettings.GetBool("games.enablerewind");
 
   // Check if save states are supported, so savestates and rewind can be used.
-  size_t state_size = m_dll.retro_serialize_size();
-  bool initSuccess = InitSaveState(info.data, info.size);
-  if (state_size)
+  m_serialSize = m_dll.retro_serialize_size();
+  m_bRewindEnabled = g_guiSettings.GetBool("games.enablerewind");
+
+  if (!InitSaveState(info.data, info.size))
   {
-    if (g_guiSettings.GetBool("games.savestates"))
+    m_serialSize = 0;
+    m_bRewindEnabled = false;
+  }
+  else if (!m_serialSize)
+  {
+    CLog::Log(LOGINFO, "GameClient: Game serialization not supported, continuing without save or rewind");
+    m_bRewindEnabled = false;
+  }
+  else
+  {
+    // Load savestate if possible
+    bool loadSuccess = false;
+
+    if (!file.m_startSaveState.empty())
+      loadSuccess = Load(file.m_startSaveState);
+    else if (g_guiSettings.GetBool("games.savestates"))
+      loadSuccess = AutoLoad();
+
+    if (!loadSuccess && m_bRewindEnabled)
     {
-      if (!initSuccess)
-        CLog::Log(LOGERROR, "GameClient: Couldn't open database, continuing without save support");
-      else
-      {
-        // Load savestate if possible
-        bool loadSuccess = false;
-        if (!file.m_startSaveState.empty())
-          loadSuccess = Load(file.m_startSaveState);
-        if (!loadSuccess)
-          loadSuccess = AutoLoad();
-        else
-          loadSuccess = AutoLoad();
-        if (!loadSuccess && m_rewindSupported)
-        {
-          CLog::Log(LOGDEBUG, "GameClient: Failed to load last savestate, forcing rewind to off");
-          m_rewindSupported = false;
-        }
-      }
+      CLog::Log(LOGDEBUG, "GameClient: Failed to load last savestate, forcing rewind to off");
+      m_bRewindEnabled = false;
     }
+
     // Set up rewind functionality
-    if (m_rewindSupported)
+    if (m_bRewindEnabled)
     {
-      m_serialState.Init(state_size, (size_t)(g_guiSettings.GetInt("games.rewindtime") * m_frameRate));
+      m_serialState.Init(m_serialSize, (size_t)(g_guiSettings.GetInt("games.rewindtime") * m_frameRate));
 
       if (m_dll.retro_serialize(m_serialState.GetState(), m_serialState.GetFrameSize()))
         CLog::Log(LOGDEBUG, "GameClient: Rewind is enabled");
       else
       {
-        m_rewindSupported = false;
+        m_bRewindEnabled = false;
         m_serialState.Reset();
         CLog::Log(LOGDEBUG, "GameClient: Unable to serialize state, proceeding without rewind");
       }
     }
-  }
-  else
-  {
-    CLog::Log(LOGINFO, "GameClient: Game serialization not supported");
   }
 
   // Query the game region
@@ -384,6 +445,10 @@ bool CGameClient::OpenFile(const CFileItem& file, const DataReceiver &callbacks)
   // if GamePlatform != PLATFORM_UNKNOWN or PLATFORM_AMBIGUOUS.
   // Need an API call in libretro that lets us know the number of ports
   SetDevice(0, RETRO_DEVICE_JOYPAD);
+
+  // Hopefully the game client assumed its own copy of the game data
+  //delete[] info.data; // TODO
+  info.data = NULL;
 
   return true;
 }
@@ -436,14 +501,14 @@ void CGameClient::RunFrame()
     m_saveState.SetPlaytimeWallClock(m_saveState.GetPlaytimeWallClock() + 1.0 / m_frameRate);
 
     // Append a new state delta to the rewind buffer
-    if (m_rewindSupported)
+    if (m_bRewindEnabled)
     {
       if (m_dll.retro_serialize(m_serialState.GetNextState(), m_serialState.GetFrameSize()))
         m_serialState.AdvanceFrame();
       else
       {
         CLog::Log(LOGERROR, "GameClient core claimed it could serialize, but failed.");
-        m_rewindSupported = false;
+        m_bRewindEnabled = false;
       }
     }
   }
@@ -468,14 +533,14 @@ bool CGameClient::InitSaveState(const void *gameBuffer /* = NULL */, size_t leng
     else
     {
       // Path and/or CRC not in database, calculate the game CRC now
-      CLog::Log(LOGDEBUG, "GameClient: %s not in database, trying CRC", URIUtils::GetFileName(m_gamePath).c_str());
+      CLog::Log(LOGDEBUG, "GameClient: %s not in database, calculating CRC", URIUtils::GetFileName(m_gamePath).c_str());
       if (gameBuffer)
       {
         // If the length is too great, fall back to CRCing the file path
-        if (length <= MAX_SAVESTATE_CRC_LENGTH)
-          m_saveState.SetGameCRCFromFile(reinterpret_cast<const char*>(gameBuffer), length);
-        else
+        if (length > MAX_SAVESTATE_CRC_LENGTH)
           m_saveState.SetGameCRCFromFile(m_gamePath, true);
+        else
+          m_saveState.SetGameCRCFromFile(reinterpret_cast<const char*>(gameBuffer), length);
       }
       else
         m_saveState.SetGameCRCFromFile(m_gamePath);
@@ -550,7 +615,7 @@ bool CGameClient::Load()
       return false;
     }
     // Reset rewind buffer if rewinding is enabled
-    if (m_rewindSupported && m_serialState.IsInited())
+    if (m_bRewindEnabled && m_serialState.IsInited())
     {
       m_serialState.Init(data.size(), (size_t)(g_guiSettings.GetInt("games.rewindtime") * m_frameRate));
       memcpy(m_serialState.GetState(), data.data(), data.size());
@@ -616,17 +681,16 @@ bool CGameClient::Save(const CStdString &label)
 bool CGameClient::Save()
 {
   // Prefer serialized states to avoid any game client serialization procedures
-  if (m_rewindSupported && m_serialState.GetFrameSize())
+  if (m_bRewindEnabled && m_serialState.GetFrameSize())
   {
     m_savestateBuffer.resize(m_serialState.GetFrameSize());
     memcpy(m_savestateBuffer.data(), m_serialState.GetState(), m_serialState.GetFrameSize());
   }
   else
   {
-    size_t save_size = m_dll.retro_serialize_size();
-    if (!save_size)
+    if (!m_serialSize)
       return false;
-    m_savestateBuffer.resize(save_size);
+    m_savestateBuffer.resize(m_serialSize);
     if (!m_dll.retro_serialize(m_savestateBuffer.data(), m_savestateBuffer.size()))
       return false;
   }
@@ -640,7 +704,7 @@ unsigned int CGameClient::RewindFrames(unsigned int frames)
   CSingleLock lock(m_critSection);
 
   unsigned int rewound = 0;
-  if (m_bIsPlaying && m_rewindSupported)
+  if (m_bIsPlaying && m_bRewindEnabled)
   {
     rewound = m_serialState.RewindFrames(frames);
     if (rewound && m_dll.retro_unserialize(m_serialState.GetState(), m_serialState.GetFrameSize()))
@@ -670,12 +734,12 @@ void CGameClient::Reset()
     m_saveState.SetPlaytimeFrames(0);
     m_saveState.SetPlaytimeWallClock(0.0);
 
-    if (m_rewindSupported)
+    if (m_bRewindEnabled)
     {
       m_serialState.Init(m_serialState.GetFrameSize(), m_serialState.GetMaxFrames());
       if (!m_dll.retro_serialize(m_serialState.GetState(), m_serialState.GetFrameSize()))
       {
-        m_rewindSupported = false;
+        m_bRewindEnabled = false;
         CLog::Log(LOGINFO, "GameClient::Reset - Unable to serialize state, proceeding without rewind");
       }
     }
@@ -685,7 +749,7 @@ void CGameClient::Reset()
 void CGameClient::SetFrameRate(double framerate)
 {
   m_frameRate = framerate;
-  if (m_rewindSupported)
+  if (m_bRewindEnabled)
     m_serialState.SetMaxFrames((size_t)(g_guiSettings.GetInt("games.rewindtime") * m_frameRate));
 }
 
