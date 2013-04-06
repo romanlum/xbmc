@@ -65,7 +65,7 @@ void CJoystickManager::Initialize()
 #elif defined(TARGET_LINUX)
   CLinuxJoystick::Initialize(m_joysticks);
 #endif // TARGET_LINUX
-
+	
   while (m_joysticks.size() > JOY_ARRAY_LENGTH(m_states))
     m_joysticks.pop_back();
 
@@ -83,8 +83,10 @@ void CJoystickManager::DeInitialize()
   CLinuxJoystick::DeInitialize(m_joysticks);
 #endif // TARGET_LINUX
 
-  for (unsigned int i = 0; i < JOY_ARRAY_LENGTH(m_states); i++)
+   for (unsigned int i = 0; i < JOY_ARRAY_LENGTH(m_states); i++)
     m_states[i].Reset();
+
+   m_actionTracker.Reset(); 
 }
 
 void CJoystickManager::Update()
@@ -126,7 +128,7 @@ void CJoystickManager::ProcessButtonPresses(SJoystick &oldState, const SJoystick
       continue;
     oldState.buttons[i] = newState.buttons[i];
 
-    CLog::Log(LOGDEBUG, "Joystick %d button %d %s", joyID, i + 1, newState.buttons[i] ? "pressed" : "unpressed");
+	CLog::Log(LOGDEBUG, "Joystick %d button %d %s", joyID, i + 1, newState.buttons[i] ? "pressed" : "unpressed");
 
     // Check to see if an action is registered for the button first
     int        actionID;
