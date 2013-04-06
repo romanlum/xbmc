@@ -304,7 +304,7 @@ void CLinuxJoystick::Update()
       }
       else
       {
-        CLog::Log(LOGERROR, "CLinuxJoystick::Initialize: failed to read joystick \"%s\" on %s",
+        CLog::Log(LOGERROR, "CLinuxJoystick::Update: failed to read joystick \"%s\" on %s",
             m_state.name.c_str(), m_filename.c_str());
         return;
       }
@@ -315,8 +315,8 @@ void CLinuxJoystick::Update()
     // JS_EVENT_AXIS      0x02    /* joystick moved */
     // JS_EVENT_INIT      0x80    /* (flag) initial state of device */
 
-    // We don't differentiate between synthetic (i.e. initial) or real events
-    switch (joyEvent.type & ~JS_EVENT_INIT)
+    // Ignore initial events, because they mess up the buttons
+    switch (joyEvent.type)
     {
     case JS_EVENT_BUTTON:
       if (joyEvent.number < m_state.buttonCount)
