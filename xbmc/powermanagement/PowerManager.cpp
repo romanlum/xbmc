@@ -34,7 +34,7 @@
 #include "dialogs/GUIDialogKaiToast.h"
 #ifdef HAS_SDL_JOYSTICK
 #include "input/JoystickManager.h"
-#include "peripherals/devices\PeripheralImon.h"
+#include "peripherals/devices/PeripheralImon.h"
 #endif
 
 
