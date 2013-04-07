@@ -32,6 +32,9 @@
 #include <sys/ioctl.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+extern "C" {
+#include <libudev.h>
+}
 
 /*
  * The following values come from include/input.h in the kernel source; the
@@ -98,28 +101,57 @@ CLinuxJoystick::~CLinuxJoystick()
 /* static */
 void CLinuxJoystick::Initialize(JoystickArray &joysticks)
 {
-  // TODO: under what circumstances should we read /dev/js0?
-  string inputDir("/dev/input");
-  DIR *pd = opendir(inputDir.c_str());
-  if (pd == NULL)
-  {
-    CLog::Log(LOGERROR, "CLinuxJoystick::Initialize: can't open /dev/input (errno=%d)", errno);
-    return;
+
+  struct udev *udev;
+  struct udev_enumerate *enumerate;
+  struct udev_list_entry *devs = NULL;
+  struct udev_list_entry *item = NULL;
+
+  // create udev
+  udev = udev_new();
+  if (!udev) {
+	  CLog::Log(LOGERROR, "CLinuxJoystick::Initialize: can't create udev");
+	  return;
   }
 
-  dirent *pDirent;
-  while ((pDirent = readdir(pd))!= NULL)
+  enumerate = udev_enumerate_new(udev);
+  if( enumerate == NULL )
   {
-    if (strncmp(pDirent->d_name, "js", 2) == 0)
+	  CLog::Log(LOGERROR,"CLinuxJoystick::Initialize: can't create udev enumeration");
+	  return;
+  }
+
+  udev_enumerate_add_match_subsystem(enumerate, "input");
+  udev_enumerate_add_match_property(enumerate, "ID_INPUT_JOYSTICK", "1");
+  udev_enumerate_scan_devices(enumerate);
+  devs = udev_enumerate_get_list_entry(enumerate);
+
+  for (item = devs; item; item = udev_list_entry_get_next(item))
+  {
+	const char *path = udev_list_entry_get_name(item);
+	struct udev_device *dev = udev_device_new_from_syspath(udev, path);
+
+	const char* deviceFile = udev_device_get_devnode(dev);
+
+	if( deviceFile == NULL )
+	{
+		udev_device_unref(dev);
+		continue;
+	}
+
+	// Only use joystick api devices nodes
+	if(strstr(deviceFile, "/js"))
     {
-      // Found a joystick device
-      string filename(inputDir + "/" + pDirent->d_name);
+	  string filename(deviceFile);
+
+      /* Found a joystick device */
       CLog::Log(LOGNOTICE, "CLinuxJoystick::Initialize: opening joystick %s", filename.c_str());
 
-      int fd = open(filename.c_str(), O_RDONLY);
+      int fd = open(deviceFile, O_RDONLY);
       if (fd < 0)
       {
         CLog::Log(LOGERROR, "CLinuxJoystick::Initialize: can't open %s (errno=%d)", filename.c_str(), errno);
+        udev_device_unref(dev);
         continue;
       }
 
@@ -135,6 +167,7 @@ void CLinuxJoystick::Initialize(JoystickArray &joysticks)
       {
         CLog::Log(LOGERROR, "CLinuxJoystick::Initialize: failed ioctl() (errno=%d)", errno);
         close(fd);
+        udev_device_unref(dev);
         continue;
       }
 
@@ -142,6 +175,7 @@ void CLinuxJoystick::Initialize(JoystickArray &joysticks)
       {
         CLog::Log(LOGERROR, "CLinuxJoystick::Initialize: failed fcntl() (errno=%d)", errno);
         close(fd);
+        udev_device_unref(dev);
         continue;
       }
 
@@ -150,6 +184,7 @@ void CLinuxJoystick::Initialize(JoystickArray &joysticks)
       {
         CLog::Log(LOGERROR, "CLinuxJoystick::Initialize: old (0.x) interface is not supported (version=%08x)", version);
         close(fd);
+        udev_device_unref(dev);
         continue;
       }
 
@@ -208,8 +243,10 @@ void CLinuxJoystick::Initialize(JoystickArray &joysticks)
       joysticks.push_back(boost::shared_ptr<IJoystick>(new CLinuxJoystick(fd, joysticks.size(),
           name, filename, buttons, axes)));
     }
+	udev_device_unref(dev);
   }
-  closedir(pd);
+  udev_enumerate_unref(enumerate);
+  udev_unref(udev);
 }
 
 /**
