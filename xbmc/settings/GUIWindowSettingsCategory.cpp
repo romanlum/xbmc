@@ -3018,7 +3018,7 @@ void CGUIWindowSettingsCategory::FillInGameDirs(CSettingsGroup *pSettingsGroup)
   CAddonMgr::Get().GetAddons(ADDON_GAMEDLL, gameclients);
   for (VECADDONS::const_iterator it = gameclients.begin(); it != gameclients.end(); it++)
   {
-    if ((*it)->GetSetting("showingamesettings") != "true")
+    if ((*it)->GetSetting("hassystemdirectory") != "true")
       continue;
 
     CStdString id = (*it)->ID();
